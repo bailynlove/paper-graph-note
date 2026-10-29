@@ -9,6 +9,22 @@ Two agent skills for turning a research paper into a readable, evidence-grounded
 
 The Zotero edition extends the normal skill; install both directories together. It does not require Better Notes and does not assume that Zotero item notes can render JavaScript.
 
+## Contents
+
+- [What the map shows](#what-the-map-shows)
+- [Requirements](#requirements)
+- [Install](#install)
+  - [Pi package](#pi-package)
+  - [Manual install](#manual-install)
+- [Use with an agent](#use-with-an-agent)
+  - [Normal edition](#normal-edition)
+  - [Zotero edition](#zotero-edition)
+- [Zotero permissions](#zotero-permissions)
+- [Render without an agent](#render-without-an-agent)
+- [Privacy and trust](#privacy-and-trust)
+- [Test](#test)
+- [Files](#files)
+
 ## What the map shows
 
 Five lanes connect **research questions → related work → methods → experiments → future work**. Short node summaries stay visible; evidence and qualifications expand on demand. Inferred proposals have badges and dashed borders. A connection index records why nodes are related, including when JavaScript is disabled.
@@ -30,7 +46,13 @@ The renderer is not a PDF parser or an LLM service. Your agent provides the pape
 
 ### Pi package
 
-From a local checkout, run:
+Install both skills from npm:
+
+```bash
+pi install npm:paper-graph-note
+```
+
+Alternatively, install from a local checkout:
 
 ```bash
 pi install /absolute/path/to/paper-graph-note
