@@ -33,6 +33,12 @@ The visual treatment uses paper-like surfaces, large editorial headings, distinc
 
 Open [`examples/demo.html`](examples/demo.html) for a rendered example. Its content and page references are explicitly fictional; it contains no real paper, private library information, or experimental results.
 
+For a real-paper example, here is a map of [CodeOCR: On the Effectiveness of Vision Language Models in Code Understanding](https://arxiv.org/abs/2602.01785):
+
+![Research map of the CodeOCR paper](examples/codeocr-visual-code-map.png)
+
+The image is a static screenshot; the Zotero links and expandable evidence are available only in the original HTML map.
+
 ## Requirements
 
 - A skill-capable agent to read the paper and compose the map.
