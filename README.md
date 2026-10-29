@@ -15,6 +15,7 @@ The Zotero edition extends the normal skill; install both directories together. 
 - [Requirements](#requirements)
 - [Install](#install)
   - [Pi package](#pi-package)
+  - [Skills installer](#skills-installer)
   - [Manual install](#manual-install)
 - [Use with an agent](#use-with-an-agent)
   - [Normal edition](#normal-edition)
@@ -65,6 +66,16 @@ pi install /absolute/path/to/paper-graph-note
 ```
 
 Then start a new Pi session or use `/reload`. This package declares only skills, not extensions, tools, providers, or startup scripts. Do not add it to your installation until you have reviewed the skill and renderer files.
+
+### Skills installer
+
+To select compatible agents and skills interactively, run:
+
+```bash
+npx skills add bailynlove/paper-graph-note
+```
+
+Select both skills if you want the Zotero edition. The available agents and prompts depend on the installer version.
 
 ### Manual install
 
