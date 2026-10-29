@@ -1,0 +1,115 @@
+{
+  "title": "Evidence before answers",
+  "subtitle": "A fictional paper map showing how a research question becomes a testable, evidence-grounded workflow.",
+  "citation": "Synthetic design example. Not a real paper; no empirical results are claimed. All section and page references are illustrative.",
+  "lanes": [
+    {
+      "id": "questions",
+      "nodes": [
+        {
+          "id": "q-trust",
+          "title": "Can a verdict be checked?",
+          "summary": "A useful answer should reveal which evidence supports it, not merely sound convincing.",
+          "details": ["This is a fictional research question used to demonstrate the map format."],
+          "source": {"section": "Example §1 Motivation", "page": 1}
+        },
+        {
+          "id": "q-transfer",
+          "title": "What changes under drift?",
+          "summary": "Ask whether the same evidence workflow remains useful when language, topics, and source material change.",
+          "source": {"section": "Example §1 Questions", "page": 1}
+        }
+      ]
+    },
+    {
+      "id": "related",
+      "nodes": [
+        {
+          "id": "r-prediction",
+          "title": "Prediction is not evidence",
+          "summary": "The toy comparison distinguishes a model's answer from a traceable justification for that answer.",
+          "source": {"section": "Example §2 Context", "page": 2}
+        },
+        {
+          "id": "r-retrieval",
+          "title": "Retrieval supplies context",
+          "summary": "Finding relevant passages creates candidate support, but relevance alone does not establish the conclusion.",
+          "source": {"section": "Example §2 Context", "page": 2}
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "nodes": [
+        {
+          "id": "m-retrieve",
+          "title": "01 / Retrieve candidates",
+          "summary": "Turn the question into a small set of candidate passages while preserving their source locations.",
+          "details": ["Input: a question and a permitted document collection.", "Output: candidate passages with stable source references."],
+          "source": {"section": "Example §3.1 Retrieval", "page": 3}
+        },
+        {
+          "id": "m-check",
+          "title": "02 / Check support",
+          "summary": "Separate supporting passages, conflicting evidence, and missing information before producing a verdict.",
+          "details": ["Retain uncertainty instead of treating absent evidence as a negative finding."],
+          "source": {"section": "Example §3.2 Verification", "page": 3}
+        },
+        {
+          "id": "m-answer",
+          "title": "03 / Explain the decision",
+          "summary": "Return a concise answer with its evidence trail and clearly bounded uncertainty.",
+          "source": {"section": "Example §3.3 Output", "page": 4}
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "nodes": [
+        {
+          "id": "e-compare",
+          "title": "Compare like with like",
+          "summary": "Illustrative protocol: hold questions fixed and compare the evidence workflow with a retrieval-free baseline.",
+          "details": ["No real scores are supplied. A real paper map must preserve the authors' metrics, units, splits, and uncertainty."],
+          "source": {"section": "Example §4 Evaluation plan", "page": 5}
+        },
+        {
+          "id": "e-ablate",
+          "title": "Remove the support check",
+          "summary": "Illustrative ablation: remove verification to ask whether it changes citation faithfulness rather than just fluency.",
+          "source": {"section": "Example §4 Ablation plan", "page": 5}
+        }
+      ]
+    },
+    {
+      "id": "future",
+      "nodes": [
+        {
+          "id": "f-drift",
+          "title": "Test changing sources",
+          "summary": "A proposed next step is to evaluate the workflow when the evidence collection changes over time.",
+          "details": ["This is an explicitly inferred proposal, not an author-stated conclusion."],
+          "inferred": true
+        },
+        {
+          "id": "f-conflict",
+          "title": "Keep disagreement visible",
+          "summary": "Explore how conflicting sources should appear in an explanation instead of being silently averaged away.",
+          "inferred": true
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {"from": "q-trust", "to": "r-prediction", "label": "exposes the distinction"},
+    {"from": "q-transfer", "to": "r-retrieval", "label": "motivates adaptable context"},
+    {"from": "r-retrieval", "to": "m-retrieve", "label": "provides the mechanism"},
+    {"from": "r-prediction", "to": "m-check", "label": "requires explicit support checking"},
+    {"from": "m-retrieve", "to": "m-check", "label": "supplies candidate evidence"},
+    {"from": "m-check", "to": "m-answer", "label": "grounds the explanation"},
+    {"from": "m-answer", "to": "e-compare", "label": "evaluated against a baseline"},
+    {"from": "m-check", "to": "e-ablate", "label": "isolated by ablation"},
+    {"from": "e-compare", "to": "f-drift", "label": "leaves changing sources untested"},
+    {"from": "e-ablate", "to": "f-conflict", "label": "raises the conflict-handling question"}
+  ]
+}

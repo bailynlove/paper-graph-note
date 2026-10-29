@@ -1,0 +1,12 @@
+{
+  "name": "paper-graph-note",
+  "version": "0.1.0",
+  "description": "Evidence-grounded HTML research maps, with normal and Zotero agent skills.",
+  "keywords": ["pi-package", "agent-skills", "research", "zotero"],
+  "pi": {
+    "skills": ["./skills"]
+  },
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -v"
+  }
+}
